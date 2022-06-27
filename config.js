@@ -61,6 +61,7 @@ global.ownernummenu = ['19106065875'] //ur owner number in menu and all
 global.watermark = "Kenneth ID" //ur watermark
 global.botscript = "https://github.com/kennethid/CheemsBot-MD3"
 global.linkz1 = "https://chat.whatsapp.com/J1S3g1fbWSS9r01UNSBLst"
+global.linkz2 = "https://chat.whatsapp.com/J1S3g1fbWSS9r01UNSBLst"
 
 //Bot theme media
 global.thum = fs.readFileSync("./XeonMedia/theme/cheemspic.jpg") //ur thumb pic
