@@ -9387,7 +9387,7 @@ let template = await generateWAMessageFromContent(m.chat, proto.Message.fromObje
             XeonBotInc.relayMessage(m.chat, template.message, { messageId: template.key.id })
             }
             break
-case 'menu':
+case 'menu': case 'allmenu':
 	   if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
 	XeonBotInc.sendMessage(from, { react: { text: `${global.reactmoji}`, key: m.key }})
