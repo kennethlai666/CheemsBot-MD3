@@ -1387,41 +1387,9 @@ message: {
 }
 }
 //fake gif by xeon
-            const fgi = {
-	 key: { 
-         fromMe: false,
-	      participant: `0@s.whatsapp.net`, ...(from ? 
-	 { remoteJid: "916909137213-1613049930@g.us" } : {}) 
-                },
-	 message: { 
-                 "videoMessage": { 
-                 "title": `Xeon`,
-                 "h": `Xeon`,
-                 'duration': '99999', 
-                 'gifPlayback': 'true', 
-                 'caption': `Xeon`,
-                 'jpegThumbnail': fs.readFileSync('./XeonMedia/theme/Cheems-bot.mp4')
-                        }
-                       }
-	                  } 
+            
 //FAKEREPLY TROLI
-const ftroli = {
-key : {
-participant : '0@s.whatsapp.net'
-},
-message: {
-orderMessage: {
-itemCount : 1,
-status: 1,
-surface : 1,
-message: `${global.ownername}`, //
-orderTitle: `${global.botname}`,
-thumbnail: log0, //Pic
-sellerJid: '0@s.whatsapp.net'
 
-}
-}
-}
 //FAKEREPLY LOCATION
 const flokasi = {
 key : {
@@ -1594,7 +1562,7 @@ const reactionMessage = {
                 
 //cases starts here
 switch(command) {
-	case 'alive': case 'panel': case 'list': case 'help': case '?': {
+	case 'alive': case 'panel': case 'list': case 'help': case 'bot': case '?': {
 		if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 XeonBotInc.sendMessage(from, { react: { text: `${global.reactmoji}`, key: m.key }})

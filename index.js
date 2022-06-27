@@ -121,9 +121,13 @@ XeonBotInc.ev.on('groups.update', async pea => {
      }
     })
 
-
-        //if (!wlcm.includes(anu.id)) return //remove forwad slashes to make it welcome on off
-        
+//randoming function
+function pickRandom(list) {
+return list[Math.floor(list.length * Math.random())]
+}
+//document randomizer
+let documents = [doc1,doc2,doc3,doc4,doc5,doc6]
+let docs = pickRandom(documents)
 
 
     
