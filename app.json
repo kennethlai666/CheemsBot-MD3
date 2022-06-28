@@ -1,8 +1,8 @@
 {
   "name": "Ken- Bot",
   "description": "whatsapp md bot build with nodejs",
-  "repository": "https://github.com/kennethid/CheemsBot-MD3",
-  "logo": "https://pbs.twimg.com/media/FO7fojOakAAyYgt?format=jpg&name=900x900",
+  "repository": "https://github.com/kennethid/CheemsBot-MD2",
+  "logo": "https://pbs.twimg.com/media/FSkPyS2XwAI8JGf?format=jpg&name=medium",
   "keywords": ["nodejs", "bot", "whatsapp bot", "whatsapp automation", "multi device"],
   "buildpacks": [
     {
@@ -10,6 +10,9 @@
     },
     {
       "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest"
+    },
+    {
+      "url": "https://github.com/mcollina/heroku-buildpack-imagemagick"
     },
     {
       "url": "https://github.com/clhuang/heroku-buildpack-webp-binaries.git"
