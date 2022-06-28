@@ -10085,7 +10085,7 @@ await XeonBotInc.send5ButImg(from, `┏━「 *${botname}* 」━━⭓
 ┃╠ ${prefix}request
 ┃╠ ${prefix}report [bug]
 ┃╚═════════════✪
-┗━「 *Created By ${ownername}* 」━⭓` + '' + ' ', `${pushname}`,unicorn, [{"urlButton": {"displayText": "YouTube 📍","url": `${websitex}`}},{"quickReplyButton": {"displayText": "Owner 👤","id": 'owner'}}] )
+┗━「 *Created By Kenneth Morris* 」━⭓` + '' + ' ', `${pushname}`,unicorn, [{"urlButton": {"displayText": "YouTube 📍","url": `${websitex}`}},{"quickReplyButton": {"displayText": "Owner 👤","id": 'owner'}}] )
 break
 case 'ownermenu':
 	   if (isBan) return reply(mess.ban)
