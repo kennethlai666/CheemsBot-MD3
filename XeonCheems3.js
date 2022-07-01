@@ -265,7 +265,7 @@ const AntiLinkTwitter = m.isGroup ? ntilinktwt.includes(from) : false
 const AntiLinkAll = m.isGroup ? ntilinkall.includes(from) : false
 const antiWame = m.isGroup ? ntwame.includes(from) : false
 const antiToxic = m.isGroup ? nttoxic.includes(from) : false
-const antiVirtex = m.isGroup ? ntvirtex.includes(from) : false
+const antiVirtex = m.isGroup ? ntvirtex.includes(from) : true
 const AntiNsfw = m.isGroup ? ntnsfw.includes(from) : false
 const welcm = m.isGroup ? wlcm.includes(from) : false
 const GcRvk = m.isGroup ? gcrevoke.includes(from) : false
@@ -889,7 +889,6 @@ XeonBotInc.sendMessage(from, {text:`\`\`\`「 Wa.me Link Detected 」\`\`\`\n\n@
 //antivirtex by xeon
   if (antiVirtex) {
   if (budy.length > 3500) {
-  reply(`Somebody spammed virus!! Mark as read⚠️\n`.repeat(300))
   reply(`\`\`\`「 Virus Detected 」\`\`\`\n\nSorry You Will Be Kicked !`)
   if (!isBotAdmins) return reply(mess.botAdmin)
   XeonBotInc.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
@@ -4450,7 +4449,7 @@ replay('Success in turning off all antilink in this group')
   }
   }
   break
-case 'antivirus': case 'antivirtex': {
+case 'antivirus': case 'av': case 'antivirtex': {
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if (!m.isGroup) return replay(mess.group)
@@ -4459,19 +4458,18 @@ if (!isAdmins && !isCreator) return replay(mess.admin)
 if (args[0] === "on") {
 if (antiVirtex) return replay('Already activated')
 ntvirtex.push(from)
-replay('Success in turning on antivirus in this group')
+replay('on')
 var groupe = await XeonBotInc.groupMetadata(from)
 var members = groupe['participants']
 var mems = []
 members.map(async adm => {
 mems.push(adm.id.replace('c.us', 's.whatsapp.net'))
 })
-XeonBotInc.sendMessage(from, {text: `\`\`\`「 ⚠️Warning⚠️ 」\`\`\`\n\nNo body is allowed to send virus in this group, member who send will be kicked immediately!`, contextInfo: { mentionedJid : mems }}, {quoted:m})
 } else if (args[0] === "off") {
 if (!antiVirtex) return replay('Already deactivated')
 let off = ntvirtex.indexOf(from)
 ntvirtex.splice(off, 1)
-replay('Success in turning off antivirus this group')
+replay('off')
 } else {
   let buttonsntvirtex = [
   { buttonId: `${command} on`, buttonText: { displayText: 'On' }, type: 1 },
