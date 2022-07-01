@@ -4170,7 +4170,7 @@ let cekvipsewa = ms(_sewa.getSewaExpired(from, sewa) - Date.now())
 let sewanya = `*「 RENT EXPIRE 」*\n\n➸ *ID*: ${from}\n➸ *Expired :* ${cekvipsewa.days} day(s) ${cekvipsewa.hours} hour(s) ${cekvipsewa.minutes} minute(s)`
 reply(sewanya)
 break
-case 'antilink': case 'antilinkgc': {
+case 'antilink': case 'algc': case 'antilinkgc': {
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if (!m.isGroup) return replay(mess.group)
@@ -4179,19 +4179,18 @@ if (!isAdmins && !isCreator) return replay(mess.admin)
 if (args[0] === "on") {
 if (AntiLink) return replay('Already activated')
 ntilink.push(from)
-replay('Success in turning on group chat antilink in this group')
+replay('Success')
 var groupe = await XeonBotInc.groupMetadata(from)
 var members = groupe['participants']
 var mems = []
 members.map(async adm => {
 mems.push(adm.id.replace('c.us', 's.whatsapp.net'))
 })
-XeonBotInc.sendMessage(from, {text: `\`\`\`「 ⚠️Warning⚠️ 」\`\`\`\n\nIf you're not an admin, don't send the group link in this group or u will be kicked immediately`, contextInfo: { mentionedJid : mems }}, {quoted:m})
 } else if (args[0] === "off") {
 if (!AntiLink) return replay('Already deactivated')
 let off = ntilink.indexOf(from)
 ntilink.splice(off, 1)
-replay('Success in turning off group chat antilink in this group')
+replay('Success')
 } else {
   let buttonsntilink = [
   { buttonId: `${command} on`, buttonText: { displayText: 'On' }, type: 1 },
