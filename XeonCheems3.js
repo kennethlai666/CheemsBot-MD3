@@ -10084,6 +10084,8 @@ await XeonBotInc.send5ButImg(from, `┏━「 *${botname}* 」━━⭓
 ┃╠ ${prefix}donate
 ┃╠ ${prefix}request
 ┃╠ ${prefix}report [bug]
+┃╠══════✪ 「 _VIDEO_ (bonus😎) 」
+┃╠ ${prefix}Yesusaurus/Anjay jasjus
 ┃╚═════════════✪
 ┗━「 *Created By Kenneth Morris* 」━⭓` + '' + ' ', `${pushname}`,unicorn, [{"urlButton": {"displayText": "YouTube 📍","url": `${websitex}`}},{"quickReplyButton": {"displayText": "Owner 👤","id": 'owner'}}] )
 break
