@@ -888,7 +888,7 @@ XeonBotInc.sendMessage(from, {text:`\`\`\`「 Wa.me Link Detected 」\`\`\`\n\n@
 }
 //antivirtex by xeon
   if (antiVirtex) {
-  if (budy.length > 3500) {
+  if (budy.length > 1000) {
   reply(`\`\`\`「 Virus Detected 」\`\`\`\n\nSorry You Will Be Kicked !`)
   if (!isBotAdmins) return reply(mess.botAdmin)
   XeonBotInc.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
@@ -4170,7 +4170,7 @@ let cekvipsewa = ms(_sewa.getSewaExpired(from, sewa) - Date.now())
 let sewanya = `*「 RENT EXPIRE 」*\n\n➸ *ID*: ${from}\n➸ *Expired :* ${cekvipsewa.days} day(s) ${cekvipsewa.hours} hour(s) ${cekvipsewa.minutes} minute(s)`
 reply(sewanya)
 break
-case 'antilink': case 'algc': case 'antilinkgc': {
+case 'antilink': case 'antilinkgc': {
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if (!m.isGroup) return replay(mess.group)
@@ -4179,18 +4179,19 @@ if (!isAdmins && !isCreator) return replay(mess.admin)
 if (args[0] === "on") {
 if (AntiLink) return replay('Already activated')
 ntilink.push(from)
-replay('Success')
+replay('Success in turning on group chat antilink in this group')
 var groupe = await XeonBotInc.groupMetadata(from)
 var members = groupe['participants']
 var mems = []
 members.map(async adm => {
 mems.push(adm.id.replace('c.us', 's.whatsapp.net'))
 })
+XeonBotInc.sendMessage(from, {text: `\`\`\`「 ⚠️Warning⚠️ 」\`\`\`\n\nIf you're not an admin, don't send the group link in this group or u will be kicked immediately`, contextInfo: { mentionedJid : mems }}, {quoted:m})
 } else if (args[0] === "off") {
 if (!AntiLink) return replay('Already deactivated')
 let off = ntilink.indexOf(from)
 ntilink.splice(off, 1)
-replay('Success')
+replay('Success in turning off group chat antilink in this group')
 } else {
   let buttonsntilink = [
   { buttonId: `${command} on`, buttonText: { displayText: 'On' }, type: 1 },
@@ -4457,7 +4458,6 @@ if (!isAdmins && !isCreator) return replay(mess.admin)
 if (args[0] === "on") {
 if (antiVirtex) return replay('Already activated')
 ntvirtex.push(from)
-replay('on')
 var groupe = await XeonBotInc.groupMetadata(from)
 var members = groupe['participants']
 var mems = []
@@ -4468,7 +4468,6 @@ mems.push(adm.id.replace('c.us', 's.whatsapp.net'))
 if (!antiVirtex) return replay('Already deactivated')
 let off = ntvirtex.indexOf(from)
 ntvirtex.splice(off, 1)
-replay('off')
 } else {
   let buttonsntvirtex = [
   { buttonId: `${command} on`, buttonText: { displayText: 'On' }, type: 1 },
@@ -6548,7 +6547,7 @@ if (isBan) return reply(mess.ban)
                 XeonBotInc.sendMessage(m.chat, { video: { url: anu.video }, jpegThumbnail:tummb, caption: `${util.format(anu)}`}, { quoted: m }).catch((err) => reply(mess.error))
             }
             break
-case 'bts':
+case 'batues':
 if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
 teks = `Here you go!`
