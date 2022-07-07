@@ -4935,21 +4935,19 @@ await XeonBotInc.updateProfilePicture(m.chat, { url: media }).catch((err) => fs.
 replay(mess.success)
 }
 break
-case 'tag': case 'tagall': {
+case 'tagall': {
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if (!m.isGroup) return replay(mess.group)
 if (!isAdmins && !isCreator) return replay(mess.admin)
-let teks = `╚»˙·٠•●♥ Tag All ♥●•٠·˙«╝
- 
- 🌹 *Message : ${args.join(" ") ? args.join(" ") : 'no message'}*\n\n`
+let teks = `👤 *Message : ${args.join(" ") ? args.join(" ") : 'no message'}*\n\n`
 for (let mem of participants) {
 teks += `${global.themeemoji} @${mem.id.split('@')[0]}\n`
 }
 XeonBotInc.sendMessage(m.chat, { text: teks, mentions: participants.map(a => a.id) }, { quoted: m })
 }
 break
-case 'hidetag': {
+case 'htag': case 'hidetag': {
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if (!m.isGroup) return replay(mess.group)
