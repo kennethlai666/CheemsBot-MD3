@@ -5061,7 +5061,7 @@ XeonBotInc.sendMessage(m.chat, buttonMessage, { quoted: m })
 }
 }
 break
-case 'group': case 'grup': {
+case 'group': {
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if (!m.isGroup) return replay(mess.group)
