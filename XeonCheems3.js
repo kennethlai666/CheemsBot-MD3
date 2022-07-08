@@ -6546,7 +6546,7 @@ if (isBan) return reply(mess.ban)
                 XeonBotInc.sendMessage(m.chat, { video: { url: anu.video }, jpegThumbnail:tummb, caption: `${util.format(anu)}`}, { quoted: m }).catch((err) => reply(mess.error))
             }
             break
-case 'bts':
+case 'batues':
 if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
 teks = `Here you go!`
