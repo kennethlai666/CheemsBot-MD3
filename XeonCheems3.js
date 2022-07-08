@@ -306,9 +306,9 @@ const reply = (teks) => {
         }
         //auto reply by xeon
   //if (Autoreply) //remove forwad slashes to make it autoreply on off
-        for (let anjo of setik){
-				if (budy === anjo){
-					result = fs.readFileSync(`./XeonMedia/sticker/${anjo}.webp`)
+        for (let anji of setik){
+				if (budy === anji){
+					result = fs.readFileSync(`./XeonMedia/sticker/${anji}.webp`)
 					XeonBotInc.sendMessage(m.chat, { sticker: result }, { quoted: m })
 					}
 			}
@@ -5112,8 +5112,8 @@ case 'kick': {
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if (!m.isGroup) return replay(mess.group)
-if (!isBotAdmins) return replay(mess.botAdmin)
 if (!isAdmins && !isCreator) return replay(mess.admin)
+if (!isBotAdmins) return replay(mess.botAdmin)
 let users = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
 await XeonBotInc.groupParticipantsUpdate(m.chat, [users], 'remove')
 }
@@ -5132,8 +5132,8 @@ case 'add': {
 	   if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if (!m.isGroup) return replay(mess.group)
-if (!isBotAdmins) return replay(mess.botAdmin)
 if (!isAdmins && !isCreator) return replay(mess.admin)
+if (!isBotAdmins) return replay(mess.botAdmin)
     let _participants = participants.map(user => user.id)
     let users = (await Promise.all(
         text.split(',')
